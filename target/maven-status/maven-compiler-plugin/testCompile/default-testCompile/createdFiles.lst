@@ -1,0 +1,4 @@
+com\automation\api\payloads\PostPayLoad.class
+com\automation\api\tests\RestAssuredCrudTest.class
+com\automation\api\utilities\ConfigReader.class
+com\automation\api\utilities\ExtentReportManager.class

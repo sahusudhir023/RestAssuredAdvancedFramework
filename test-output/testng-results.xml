@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-17T00:46:43 IST" name="Default suite" finished-at="2026-06-17T00:46:57 IST" duration-ms="13237">
+    <groups>
+    </groups>
+    <test started-at="2026-06-17T00:46:43 IST" name="Default test" finished-at="2026-06-17T00:46:57 IST" duration-ms="13237">
+      <class name="com.automation.api.tests.RestAssuredCrudTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:43 IST" name="setUp" finished-at="2026-06-17T00:46:45 IST" duration-ms="1335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateGetSinglePost()[pri:1, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:45 IST" name="validateGetSinglePost" finished-at="2026-06-17T00:46:49 IST" duration-ms="4053" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateGetSinglePost -->
+        <test-method signature="createPostUsingMap()[pri:2, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:49 IST" name="createPostUsingMap" finished-at="2026-06-17T00:46:50 IST" duration-ms="1054" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPostUsingMap -->
+        <test-method signature="extractDataAndAssert()[pri:3, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:50 IST" name="extractDataAndAssert" finished-at="2026-06-17T00:46:50 IST" duration-ms="585" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extractDataAndAssert -->
+        <test-method signature="testQueryParameter()[pri:4, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:50 IST" name="testQueryParameter" finished-at="2026-06-17T00:46:51 IST" duration-ms="600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQueryParameter -->
+        <test-method signature="updatePostUsingPut()[pri:5, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:51 IST" name="updatePostUsingPut" finished-at="2026-06-17T00:46:52 IST" duration-ms="916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatePostUsingPut -->
+        <test-method signature="deletePost()[pri:6, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:52 IST" name="deletePost" finished-at="2026-06-17T00:46:53 IST" duration-ms="600" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletePost -->
+        <test-method signature="createPostUsingPOJO()[pri:7, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:53 IST" name="createPostUsingPOJO" finished-at="2026-06-17T00:46:53 IST" duration-ms="685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPostUsingPOJO -->
+        <test-method signature="getPostAndConvertToObject()[pri:8, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:53 IST" name="getPostAndConvertToObject" finished-at="2026-06-17T00:46:54 IST" duration-ms="609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPostAndConvertToObject -->
+        <test-method signature="validateUsingJsonPath()[pri:9, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:54 IST" name="validateUsingJsonPath" finished-at="2026-06-17T00:46:55 IST" duration-ms="622" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateUsingJsonPath -->
+        <test-method signature="createPostDataDriven(java.lang.String,java.lang.String,int)[pri:10, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:55 IST" name="createPostDataDriven" data-provider="postDataProvider" finished-at="2026-06-17T00:46:55 IST" duration-ms="821" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sudhir Automation Hero]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Learning Data Driven Testing]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPostDataDriven -->
+        <test-method signature="createPostDataDriven(java.lang.String,java.lang.String,int)[pri:10, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:55 IST" name="createPostDataDriven" data-provider="postDataProvider" finished-at="2026-06-17T00:46:56 IST" duration-ms="614" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sameer RestAssured Guide]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Mastering API Automation]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[22]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPostDataDriven -->
+        <test-method signature="createPostDataDriven(java.lang.String,java.lang.String,int)[pri:10, instance:com.automation.api.tests.RestAssuredCrudTest@192d43ce]" started-at="2026-06-17T00:46:56 IST" name="createPostDataDriven" data-provider="postDataProvider" finished-at="2026-06-17T00:46:57 IST" duration-ms="602" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Java Advanced concept]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Deep dive to into Frameworks]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[33]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPostDataDriven -->
+      </class> <!-- com.automation.api.tests.RestAssuredCrudTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
