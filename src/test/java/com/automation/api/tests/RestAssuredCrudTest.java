@@ -25,21 +25,15 @@ import io.restassured.specification.ResponseSpecification;
 
 public class RestAssuredCrudTest {
 	
-	int globalPostId = 5;
+	private final int globalPostId = 5;
 	
-	RequestSpecification requestSpec;
-    ResponseSpecification responseSpec;
-    ResponseSpecification createResponseSpec;
+	private RequestSpecification requestSpec;
+    private ResponseSpecification responseSpec;
+    private ResponseSpecification createResponseSpec;
 	
 	@BeforeClass
 	public void setUp() {
-//		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
-		
-//		requestSpec = new RequestSpecBuilder()
-//				            .setBaseUri("https://jsonplaceholder.typicode.com")
-//				            .setContentType("application/json")
-//				            .build();
-		
+
 		try {
 			
 			PrintStream logFile = new PrintStream(new FileOutputStream("logging.txt"));
@@ -100,7 +94,7 @@ public class RestAssuredCrudTest {
 	@Test(priority = 2)
 	public void createPostUsingMap() {
 		
-		HashMap<String, Object> myData = new HashMap<String, Object>();
+		HashMap<String, Object> myData = new HashMap<>();
 		
 		myData.put("title", "Sudhir Pro Automator");
 		myData.put("body", "RestAssured framework learning live");
@@ -137,25 +131,7 @@ public class RestAssuredCrudTest {
 		
 		String actualTitle = res.path("title");
 		int actualId = res.path("id");
-//		
-//		String actualTitle = RestAssured.given()
-//				                            .spec(requestSpec)
-//				                            .pathParam("postId", globalPostId)
-//				                        .when()
-//				                            .get("/posts/{postId}")
-//				                        .then()
-//				                            .spec(responseSpec)
-//				                            .extract().path("title");
-//		
-//		int actualId = RestAssured.given()
-//				                         .spec(requestSpec)
-//				                         .pathParam("postId", globalPostId)
-//				                     .when()
-//				                         .get("/posts/{postId}")
-//				                     .then()
-//				                         .spec(responseSpec)
-//				                         .extract().path("id");
-//		
+
 		Assert.assertEquals(actualId, globalPostId);
 		Assert.assertNotNull(actualTitle);
 		
@@ -175,14 +151,6 @@ public class RestAssuredCrudTest {
 				                      .spec(responseSpec)
 				                      .extract().response();
 		
-//		String firstTitle = RestAssured.given()
-//				                           .spec(requestSpec)
-//				                           .queryParam("userId", 1)
-//				                        .when()
-//				                           .get("/posts")
-//				                        .then()
-//				                           .spec(responseSpec)
-//				                           .extract().path("[0].title");
 		ExtentReportManager.logResponseToReport(res);
 		
 		String firstTitle = res.path("[0].title");
@@ -197,7 +165,7 @@ public class RestAssuredCrudTest {
 	@Test(priority = 5)
 	public void updatePostUsingPut() {
 		
-		HashMap<String, Object> updateData = new HashMap<String, Object>();
+		HashMap<String, Object> updateData = new HashMap<>();
 		
 		updateData.put("title", "Sudhir update title");
 		updateData.put("body", "Framework update successfully");
@@ -214,17 +182,7 @@ public class RestAssuredCrudTest {
 				                      .body("title", Matchers.equalTo("Sudhir update title"))
 				                      .extract().response();
 		
-		ExtentReportManager.logResponseToReport(res);
-		
-//		RestAssured.given()
-//		               .spec(requestSpec)
-//		               .pathParam("postId", globalPostId)
-//		               .body(updateData)
-//		           .when()
-//		               .put("/posts/{postId}")
-//		           .then()
-//		               .spec(responseSpec)
-//		               .body("title", Matchers.equalTo("Sudhir update title"));
+		ExtentReportManager.logResponseToReport(res);	
 		              
 		System.out.println("Successfully Updated POST using PUT");
 	}
@@ -244,14 +202,6 @@ public class RestAssuredCrudTest {
 		
 		ExtentReportManager.logResponseToReport(res);
 		
-//		RestAssured.given()
-//		               .spec(requestSpec)
-//		               .pathParam("postId", globalPostId)
-//		           .when()
-//		               .delete("/posts/{postId}")
-//		           .then()
-//		               .spec(responseSpec);
-		             
 		System.out.println("Successfully DELETED Post");
 	}
 	
@@ -272,14 +222,6 @@ public class RestAssuredCrudTest {
 				                      .extract().response();
 		
 		ExtentReportManager.logResponseToReport(res);
-//		RestAssured.given()
-//		               .spec(requestSpec)
-//		               .body(pojoData)
-//		           .when()
-//		               .post("/posts")
-//		           .then()
-//		               .spec(createResponseSpec)
-//		               .body("title", Matchers.equalTo("Sudhir POJO King"));
 		              	
 		System.out.println("Successfully Created POST using POJO");
 	}
@@ -291,7 +233,7 @@ public class RestAssuredCrudTest {
 				                      .spec(requestSpec)
 				                      .pathParam("postId", globalPostId)
 				                  .when()
-				                      .get("posts/{postId}")
+				                      .get("/posts/{postId}")
 				                  .then()
 				                      .spec(responseSpec)
 				                      .extract().response();
@@ -299,15 +241,6 @@ public class RestAssuredCrudTest {
 		ExtentReportManager.logResponseToReport(res);
 		
 		PostPayLoad responseObj = res.as(PostPayLoad.class);
-		
-//		PostPayLoad responseObj = RestAssured.given()
-//				                                 .spec(requestSpec)
-//				                                 .pathParam("postId", globalPostId)
-//				                             .when()
-//				                                 .get("/posts/{postId}")
-//				                             .then()
-//				                                 .spec(responseSpec)
-//				                                 .extract().as(PostPayLoad.class);
 		
 		System.out.println("----POJO De-serializtion Result----");
 		
@@ -329,7 +262,7 @@ public class RestAssuredCrudTest {
 				                      .spec(requestSpec)
 				                      .pathParam("postId", globalPostId)
 				                  .when()
-				                      .get("posts/{postId}")
+				                      .get("/posts/{postId}")
 				                  .then()
 				                      .spec(responseSpec)
 				                      .extract().response();
@@ -337,16 +270,7 @@ public class RestAssuredCrudTest {
 		ExtentReportManager.logResponseToReport(res);
 		
 		String jsonResponse = res.asString();
-		
-//		String jsonResponse = RestAssured.given()
-//				                             .spec(requestSpec)
-//				                             .pathParam("postId", globalPostId)
-//				                         .when()
-//				                             .get("/posts/{postId}")
-//				                         .then()
-//				                             .spec(responseSpec)
-//				                             .extract().asString();
-		
+				
 		JsonPath jp = new JsonPath(jsonResponse);
 		
 		String title = jp.getString("title");
@@ -385,16 +309,6 @@ public class RestAssuredCrudTest {
 				                      .extract().response();
 		
 		ExtentReportManager.logResponseToReport(res);
-		
-//		RestAssured.given()
-//		               .spec(requestSpec)
-//		               .body(pojoData)
-//		           .when()
-//		               .post("/posts")
-//		           .then()
-//		               .spec(createResponseSpec)
-//		               .body("title", Matchers.equalTo(title))
-//		               .body("body", Matchers.equalTo(body));
 		
 		System.out.println("Successfully Created Data Driven POST for Title : " + title);
 	}

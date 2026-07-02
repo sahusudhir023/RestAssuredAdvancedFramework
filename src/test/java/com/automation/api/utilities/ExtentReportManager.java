@@ -35,8 +35,6 @@ public class ExtentReportManager implements ITestListener {
 		
 		extent.setSystemInfo("Environment", ConfigReader.getProperty("environment"));
 		extent.setSystemInfo("User", ConfigReader.getProperty("user"));
-//		extent.setSystemInfo("Environment", "QA");
-//		extent.setSystemInfo("User", "Sudhir");
 	}
 	
 	
